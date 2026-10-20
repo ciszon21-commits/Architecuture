@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>築法學習室｜建築師考試互動原型</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%23145f99' d='M4 36V4h32v32z'/%3E%3Cpath fill='none' stroke='white' stroke-width='3' d='M10 30h6v-6h6v-6h6v-6'/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light dark;--bg:#f2f6fa;--surface:#fff;--border:#d6e0ea;--line:#818f9e;--text:#0f1a26;--dim:#4d6074;--accent:#a34700;--ok:#1c7443;--warn:#776300;--risk:#b0341e;--info:#145f99;--tint:#e6eef5;--s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.5rem;--s6:2rem;--s7:3rem;--s8:4.5rem}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1520;--surface:#132031;--border:#22324a;--line:#596b87;--text:#e3ecf5;--dim:#92a6bb;--accent:#ffb547;--ok:#6fd3a0;--warn:#e8d36a;--risk:#ff7b6b;--info:#7cc0f0;--tint:#1b3045}}
+*{box-sizing:border-box}html{font-size:17px;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"IBM Plex Sans","Microsoft JhengHei","PingFang TC",sans-serif;line-height:1.6;font-kerning:normal}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}button,select,input[type=search],input[type=number]{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:4px;padding:.5rem .75rem}button:hover,a:hover{color:var(--accent)}:focus-visible{outline:3px solid var(--info);outline-offset:4px}a{color:var(--info);text-underline-offset:4px}h1,h2,h3,p,figure{margin:0}h1{font-size:clamp(1.625rem,3vw,2.25rem);line-height:1.2;letter-spacing:-.03em}h2{font-size:1.625rem;line-height:1.3}h3{font-size:1.25rem}h1,h2,h3{text-wrap:balance}p{max-width:66ch;text-wrap:pretty}small,.small{font-size:.875rem}.muted{color:var(--dim)}.mono,output{font-family:"IBM Plex Mono",Consolas,"Microsoft JhengHei",monospace;font-variant-numeric:tabular-nums}header{background:var(--surface);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;gap:1.5rem;align-items:center;justify-content:space-between}.brand{display:flex;gap:.75rem;align-items:center}.brand svg{width:2rem;height:2rem;stroke:var(--info);fill:none}.brand strong{font-size:1.25rem}.brand small{display:block;color:var(--dim)}.nav{display:flex;gap:.5rem;flex-wrap:wrap}.nav button[aria-pressed=true]{background:var(--text);color:var(--surface);border-color:var(--text)}.badge{display:inline-block;font-size:.75rem;line-height:1.5;padding:.25rem .5rem;border:1px solid currentColor;border-radius:4px;color:var(--dim)}.badge.warn{color:var(--warn)}.badge.info{color:var(--info)}.badge.ok{color:var(--ok)}.shell{max-width:90rem;margin:auto;display:grid;grid-template-columns:15rem minmax(0,1fr)}aside{border-right:1px solid var(--border);padding:1.5rem 1rem;min-width:0}.aside-title{font-weight:600;margin-bottom:1rem}#search{width:100%;margin:.5rem 0 1rem}.topic{width:100%;display:flex;flex-direction:column;text-align:left;gap:.25rem;background:none;border:0;border-bottom:1px solid var(--border);border-radius:0;padding:1rem .75rem}.topic[aria-current=true]{background:var(--tint);border-left:3px solid var(--info)}.topic small{color:var(--dim)}.aside-note{margin-top:1.5rem;color:var(--dim);font-size:.875rem}main{padding:2rem;min-width:0}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.5rem}.heading p{margin-top:.75rem;color:var(--dim)}.heading .badge{margin-bottom:.75rem}.toolbar{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-bottom:1.5rem}.toolbar label{font-size:.875rem}.content-grid{display:grid;grid-template-columns:minmax(0,1fr) 18rem;gap:1.5rem}.content-grid>*{min-width:0}.stage{background-color:var(--surface);background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:24px 24px;border:1px solid var(--line);border-radius:4px;padding:1rem}.drawing{display:block;width:100%;height:auto;color:var(--text)}.drawing text{font-family:"Microsoft JhengHei",sans-serif;fill:var(--text);font-size:17px}.drawing .quiet{fill:var(--dim)}.drawing .accent{fill:var(--accent)}figcaption{margin-top:.75rem;color:var(--dim);font-size:.875rem}.controls{padding:1.5rem 0}.range-row{margin-bottom:1rem}.range-row label{display:flex;justify-content:space-between;gap:.5rem}.range-row input{width:100%;accent-color:var(--info);height:2rem;margin:.25rem 0 0}.presets{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}.presets button{font-size:.875rem}.applicability{margin-bottom:1.5rem}.applicability h2{font-size:1.25rem;margin-bottom:.75rem}.applicability select{display:block;width:100%;margin-top:.5rem}.applicability details{margin-top:1rem}.applicability summary{cursor:pointer}.diagram-nav{margin-bottom:1.5rem}.result{border-top:1px solid var(--line);padding:1rem 0}.equation{font-size:1.25rem;font-variant-numeric:tabular-nums;margin-bottom:.75rem;overflow-wrap:anywhere}.checks{padding:0;list-style:none;margin:.5rem 0}.checks li{padding:.25rem 0}.status-good{color:var(--ok)}.status-bad{color:var(--risk)}.source{border-top:3px solid var(--info);padding-top:1rem}.source h2{font-size:1.25rem;margin-bottom:.75rem}.source p{margin:.75rem 0}.source ul{padding-left:1.25rem}.source li{margin:.5rem 0}.source a{overflow-wrap:anywhere}.source details{border-top:1px solid var(--border);padding-top:1rem;margin-top:1rem}.source summary{cursor:pointer;font-weight:600}.quiz{margin-top:1.5rem;background:var(--surface);padding:1.5rem;border:1px solid var(--border);border-radius:4px}.quiz h2{font-size:1.25rem}.quiz form{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0}.quiz input{width:8rem}.quiz p{margin:.5rem 0}#feedback{min-height:1.625rem}.notice{padding:1rem;background:var(--tint);margin-top:1rem;font-size:.875rem}footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.875rem;color:var(--dim)}[hidden]{display:none!important}.mobile-menu{display:none}.empty{padding:2rem 0;max-width:55rem}.empty p,.empty ul{margin-top:1rem}.empty h2{margin-top:1rem}.plan{max-width:66rem}.plan-section{margin:3rem 0}.plan-section h2{margin-bottom:1.5rem}.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;align-items:stretch}.flow-step{border:1px solid var(--line);background:var(--surface);padding:1rem;border-radius:4px}.flow-step b{display:block;margin-bottom:.5rem}.flow-step small{color:var(--dim)}.flow-step .verb{color:var(--info);margin-top:1rem;display:block}.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:3px solid var(--info);gap:1rem}.phase{padding:1rem 0}.phase p{font-size:.875rem;margin:.75rem 0}.phase strong{font-size:1.25rem;display:block}.phase .badge{margin-bottom:.75rem}.table-scroll{overflow:auto;border:1px solid var(--border);border-radius:4px}table{border-collapse:collapse;width:100%;text-align:left;min-width:35rem}th,td{padding:.75rem 1rem;border-bottom:1px solid var(--border);vertical-align:top}th{background:var(--surface);font-size:.875rem}td{font-size:.875rem}.docs{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}.skip{position:absolute;top:-10rem;left:1rem}.skip:focus{top:1rem;background:var(--surface);z-index:9;padding:.75rem}.toast{color:var(--dim);font-size:.875rem;min-height:1.5rem}.schema-figure{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.schema-figure div{border:1px dashed var(--line);padding:1rem}.schema-figure b{display:block}.schema-figure small{color:var(--dim)}
+@media(min-width:1450px){.content-grid{grid-template-columns:minmax(0,1fr) 21rem}}
+@media(max-width:1150px){.content-grid{grid-template-columns:minmax(0,1fr)}.source{margin-top:1rem}.shell{grid-template-columns:13rem minmax(0,1fr)}main{padding:1.5rem}}
+@media(max-width:760px){header{padding:1rem;align-items:flex-start;flex-direction:column;gap:1rem}.shell{display:block}aside{border-right:0;border-bottom:1px solid var(--border);padding:1rem}aside.is-collapsed .topics-body{display:none}.mobile-menu{display:inline-block;margin-left:.75rem}.aside-title{margin:0}main{padding:1.5rem 1rem}.heading{flex-direction:column}.content-grid{gap:1rem}.stage{padding:.5rem}.drawing text{font-size:28px}.flow,.timeline{grid-template-columns:minmax(0,1fr)}.flow-step .verb{margin-top:.5rem}.timeline{gap:0}.phase{border-bottom:1px solid var(--border)}.schema-figure{grid-template-columns:minmax(0,1fr)}.quiz{padding:1rem}.toolbar select{max-width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{body{background:white;color:black}header,.nav,aside,.controls,.toolbar,.quiz form,.docs,.toast{display:none}.shell,.content-grid{display:block}main{padding:0}.stage{background:white}.drawing text{fill:black}.source,.quiz{break-inside:avoid}footer{color:black}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳至主要內容</a>
+<header>
+<div class="brand"><svg viewBox="0 0 40 40" aria-hidden="true"><path stroke-width="2" d="M4 34V6h30v28H4m6-6h6v-6h6v-6h6v-5"/></svg><div><strong>築法學習室</strong><small>建築師考試法規視覺學習</small></div></div>
+<nav class="nav" aria-label="主要檢視"><button type="button" data-view="learn" aria-pressed="true">學習圖解</button><button type="button" data-view="plan" aria-pressed="false">開發藍圖</button></nav>
+<span class="badge warn">▲ 可操作原型・非正式教材</span>
+</header>
+<div class="shell">
+<aside id="sidebar" class="is-collapsed" aria-label="主題導覽">
+<div class="aside-title">學習主題<button type="button" class="mobile-menu" id="menu" aria-expanded="false" aria-controls="topics-body">展開主題</button></div>
+<div class="topics-body" id="topics-body">
+<label class="small" for="search">搜尋主題或關鍵字</label><input type="search" id="search" placeholder="例如：扶手、採光、容積">
+<div id="topics"></div><p id="no-topics" hidden>沒有符合的主題，請換個關鍵字。</p>
+<p class="aside-note">營建法規與實務八項已依官方搜尋內容映射；完整原檔與歷屆題頻率仍待核對。</p>
+</div>
+</aside>
+<main id="main">
+<div id="learn-view">
+<div class="heading"><div><span class="badge info">◆ 樓梯與避難基礎／試作單元</span><h1 id="topic-title">扶手占了位置，還剩多少淨寬？</h1><p id="topic-desc">拖動尺寸，看扶手與剩餘通行空間的關係。</p></div><button id="bookmark" aria-pressed="false" type="button">收藏主題</button></div>
+<div class="toolbar"><label for="version">閱讀版本</label><select id="version"><option value="current">現行頁面查閱・2026-10-20</option><option value="history">歷屆考試版本・尚未建置</option></select></div>
+<div id="version-note" class="notice" hidden>尚未匯入歷史條文與當年度考試公告，因此不能顯示歷屆適用版本。本圖仍使用本次查閱資料。</div>
+<p id="storage-note" class="toast" role="status"></p>
+<div id="stair-unit">
+<section class="applicability"><h2>先確認適用款別，再看尺寸</h2><label for="category">依第 33 條表列條件自行核對款別</label><select id="category"><option value="">尚未確認款別</option><option value="1">第1款：小學校舍等供兒童使用的樓梯</option><option value="2">第2款：學校、醫院等條文明列用途</option><option value="3">第3款：符合條文面積條件者</option><option value="4">第4款：第1、2、3款以外者</option></select><p id="category-result" class="notice" aria-live="polite">尚未確認用途款別；本圖只顯示扶手與淨寬，不套用表列尺寸。</p><details><summary>如何避免選錯款別？</summary><ul><li>第 2 款須核對完整列舉用途；商場另有營業面積條件。</li><li>第 3 款涉及樓層居室面積或地下面積；不能只看「住宅」名稱。</li><li>第 4 款是排除第 1、2、3 款後的其餘情形，不是所有住宅的預設值。</li></ul><p class="small muted">第 33 條表列款別，查證 2026-10-20。完整條件請回查官方原文。例外及跨法規適用仍待核對。</p></details></section>
+<div class="nav diagram-nav" aria-label="圖解切換"><button type="button" data-diagram="width" aria-pressed="true">平面：扶手與淨寬</button><button type="button" data-diagram="profile" aria-pressed="false">剖面：級高與級深</button></div>
+<div class="content-grid" id="width-pane">
+<div>
+<figure><div class="stage"><svg id="stair-svg" class="drawing" viewBox="0 0 640 400" role="img" aria-labelledby="svg-title svg-desc">
+<title id="svg-title">樓梯平面示意：寬度扣除兩側扶手突出量</title><desc id="svg-desc">互動尺寸會在下方以文字同步顯示；此圖不是官方補充圖例。</desc>
+<defs><pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L8 0" stroke="currentColor" stroke-width="1"/></pattern></defs>
+<g stroke="currentColor" fill="none" stroke-width="1.5">
+<rect id="stair-outline" x="160" y="92" width="320" height="210"/>
+<g id="treads"></g>
+<path id="outer-dim" d="M160 64v-12m0 6h320m0-6v12"/>
+<path id="inner-dim" d="M192 330v18m0-9h256m0-9v18" stroke-width="2.5"/>
+</g>
+<rect id="left-zone" x="160" y="92" width="32" height="210" fill="url(#hatch)" color="var(--info)" stroke="var(--info)"/>
+<rect id="right-zone" x="448" y="92" width="32" height="210" fill="url(#hatch)" color="var(--info)" stroke="var(--info)"/>
+<rect id="clear-zone" x="192" y="92" width="256" height="210" fill="var(--info)" opacity=".08"/>
+<text id="outer-label" x="320" y="36" text-anchor="middle">W = 100 cm</text>
+<rect x="220" y="162" width="200" height="72" fill="var(--surface)" opacity=".95"/><text x="320" y="190" text-anchor="middle" class="quiet">剩餘通行空間</text>
+<text id="clear-label" x="320" y="218" text-anchor="middle">C = 80 cm</text>
+<text id="left-label" x="120" y="270" text-anchor="end" class="quiet">L = 10</text>
+<text id="right-label" x="520" y="270" class="quiet">R = 10</text>
+<text id="bottom-label" x="320" y="378" text-anchor="middle" class="accent">淨寬 C = W − L − R</text>
+</svg></div><figcaption>圖 1　指定示意斷面：扶手突出量增加，剩餘淨寬減少。圖形隨輸入等比例改變；量測基準須另核對官方圖例。</figcaption></figure>
+<div class="controls" aria-label="示意尺寸">
+<div class="range-row"><label for="width">樓梯及平臺寬度 W <output id="width-out" for="width">100 cm</output></label><input id="width" type="range" min="60" max="160" step="1" value="100"></div>
+<div class="range-row"><label for="left">左側扶手突出 L <output id="left-out" for="left">10 cm</output></label><input id="left" type="range" min="0" max="15" step="1" value="10"></div>
+<div class="range-row"><label for="right">右側扶手突出 R <output id="right-out" for="right">10 cm</output></label><input id="right" type="range" min="0" max="15" step="1" value="10"></div>
+<div class="presets" aria-label="載入教學情境"><button type="button" data-preset="100,10,10">一般示意</button><button type="button" data-preset="95,10,10">淨寬邊界</button><button type="button" data-preset="90,10,10">淨寬不足</button><button type="button" data-preset="120,15,5">突出超出範圍</button></div>
+</div>
+<div class="result" aria-live="polite" aria-atomic="true"><p class="equation mono" id="equation"></p><ul class="checks" id="checks"></ul><p class="small muted">只檢查第 33 條說明五的扶手突出與淨寬門檻。用途分類、其他尺寸、例外與跨法規要求仍須另行檢討。</p></div>
+</div>
+<section class="source" aria-labelledby="source-title"><span class="badge ok">● 本項門檻已核對</span><h2 id="source-title">法條放在圖解旁邊</h2>
+<p>建築技術規則建築設計施工編<br><strong>第 33 條・說明五</strong></p>
+<ul><li>兩側各 <strong>10 公分</strong>範圍得設置扶手。</li><li>樓梯及平臺最小淨寬仍應為 <strong>75 公分以上</strong>。</li></ul>
+<p class="small muted">查閱及核對：2026-10-20。範圍僅為上述門檻；專業教材審核尚待完成。</p>
+<a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&amp;flno=33" target="_blank" rel="noopener">開啟官方第 33 條</a>
+<details><summary>本圖的假設與待核對事項</summary><p class="small">W 為示意斷面寬度，L、R 為占入此寬度的水平量。尚未核對官方補充圖例及完整量測基準；此處未演示昇降軌道。</p><p class="small">無障礙、避難與消防設備要求未納入此切片，不作整體合規判定。</p></details>
+<div class="notice">數值核對與教材審核分開記錄。官方頁面標示資料整編截止日為 2026-10-08；查閱日不等於所有當日公告均已收錄。</div>
+</section>
+</div>
+<section id="profile-pane" hidden><figure><div class="stage"><svg id="profile-svg" class="drawing" viewBox="0 0 640 360" role="img" aria-labelledby="profile-title profile-desc"><title id="profile-title">樓梯剖面示意</title><desc id="profile-desc">級高與級深隨輸入變更，文字結果列於圖下。</desc><path id="profile-path" fill="none" stroke="currentColor" stroke-width="3"/><path id="riser-dim" fill="none" stroke="var(--info)" stroke-width="2"/><path id="tread-dim" fill="none" stroke="var(--info)" stroke-width="2"/><text id="riser-label" x="24" y="220">H = 18 cm</text><text id="tread-label" x="320" y="36" text-anchor="middle">D = 26 cm</text><text x="560" y="320" text-anchor="end" class="quiet">樓梯剖面示意</text></svg></div><figcaption>圖 5　級高是上下階的垂直差，級深是踏階的水平尺寸；圖形只演示幾何，不含完整量測細節及例外。</figcaption></figure><div class="controls"><div class="range-row"><label for="riser">級高 H <output id="riser-out" for="riser"></output></label><input type="range" id="riser" min="12" max="24" step="1" value="18"></div><div class="range-row"><label for="tread">級深 D <output id="tread-out" for="tread"></output></label><input type="range" id="tread" min="18" max="35" step="1" value="26"></div></div><div id="profile-result" class="result" aria-live="polite"></div><p class="small muted">來源：第 33 條表列尺寸，查證 2026-10-20。需先核對款別及其他適用規定；不輸出整體合規結論。</p></section>
+<section class="quiz"><span class="badge">自編教學題・非歷屆試題</span><h2>用目前的尺寸練習一次</h2><p id="question"></p><form id="quiz-form"><label for="answer">答案（cm）</label><input type="number" id="answer" step="1" required inputmode="numeric"><button type="submit">檢查答案</button></form><p id="feedback" role="status"></p><p class="small muted">算出淨寬後，還要檢查扶手突出範圍與其他適用條件。</p></section>
+</div>
+<section class="empty" id="empty-unit" hidden><span class="badge warn">▲ 教材尚未建置</span><h2 id="empty-title"></h2><p>此主題已列入開發映射；條文、子法與圖解仍待逐項核對及審核。</p><ul id="gaps"></ul><button type="button" id="return-stairs">返回可操作的樓梯圖解</button></section>
+</div>
+<div id="plan-view" class="plan" hidden>
+<div class="heading"><div><span class="badge info">◆ 開發規劃・2026-10-20</span><h1>先把法條、圖解與題目連起來</h1><p>同一份版本化知識，支援電腦理解、手機複習與修法維護。</p></div></div>
+<figure><div class="flow">
+<div class="flow-step"><b>官方來源</b><small>考綱、條文與試題<br>記錄擷取時間與原始依據</small><span class="verb">擷取並保留證據 ↓</span></div>
+<div class="flow-step"><b>編輯與審核</b><small>逐項核對、教學解釋<br>圖解與規則分開驗證</small><span class="verb">核可後發布 ↓</span></div>
+<div class="flow-step"><b>知識版本庫</b><small>條文、教材、題解相互引用<br>舊版本保留</small><span class="verb">提供查詢與計算 ↓</span></div>
+<div class="flow-step"><b>學習介面</b><small>電腦並排閱讀<br>手機操作與複習</small><span class="verb">回饋錯題與收藏 ↓</span></div>
+</div><figcaption>圖 2　來源先經核對再發布；修法時從條文關聯回溯教材、圖解與題解，送回重審。</figcaption></figure>
+<section class="plan-section"><h2>版本放在關聯中，避免新法覆蓋舊題</h2><figure><div class="schema-figure"><div><b>條文版本</b><small>公布日／施行區間<br>查閱日／來源快照</small></div><div><b>教材修訂版</b><small>主張引用條文版本<br>圖解與規則依賴</small></div><div><b>考題與答案版本</b><small>官方答案及更正<br>歷史解析／現行法分析</small></div></div><figcaption>圖 3　各類資料保留自己的版本，再以引用關聯；查證日期與專業審核狀態分開。</figcaption></figure></section>
+<section class="plan-section"><h2>從切片驗證，再擴充內容</h2><figure><div class="timeline">
+<div class="phase"><span class="badge warn">進行中</span><strong>P0 範圍與設計</strong><p>預估 1–2 週</p><p>考綱覆蓋表、來源、模型與原型。完整考綱對照尚未完成。</p></div>
+<div class="phase"><span class="badge">待開發</span><strong>P1 完整主題</strong><p>預估 2 週</p><p>補齊樓梯適用條件、圖例、例外與練習，通過專業審核。</p></div>
+<div class="phase"><span class="badge">待開發</span><strong>P2 可用版本</strong><p>預估 4 週</p><p>擴充主題、中文搜尋、錯題及編輯工作台。</p></div>
+<div class="phase"><span class="badge">待開發</span><strong>P3 學習與維護</strong><p>預估 4 週</p><p>修法比較、影響追蹤、間隔複習及離線套件。</p></div>
+</div><figcaption>圖 4　工期以一名開發者及固定專業審核人力為估算前提；不代表全部考試法規已收錄。</figcaption></figure></section>
+<section class="plan-section"><h2>營建法規與實務：八項範圍映射</h2><p class="muted">依2026-10-20可讀取的官方搜尋內容整理；原始附件仍待取得。以下為範圍摘要。</p><div class="table-scroll"><table><caption class="small">命題大綱項目與學習主題的對照</caption><thead><tr><th scope="col">項次</th><th scope="col">範圍摘要</th><th scope="col">對應主題</th></tr></thead><tbody><tr><td>1</td><td>建築法制、執業法制與技術規則</td><td>樓梯與避難基礎、採光與通風、建蔽與容積、建築管理與執業責任</td></tr><tr><td>2</td><td>都市計畫與都市更新法制</td><td>土地使用與都市計畫、更新重建與延伸法規</td></tr><tr><td>3</td><td>國土及區域計畫的非都市土地使用管制</td><td>土地使用與都市計畫</td></tr><tr><td>4</td><td>公寓大廈管理及子法</td><td>公寓大廈管理</td></tr><tr><td>5</td><td>營造業及子法</td><td>營造業與工程責任</td></tr><tr><td>6</td><td>政府採購、子法、契約與規範</td><td>政府採購與契約</td></tr><tr><td>7</td><td>無障礙設施法規</td><td>無障礙設計</td></tr><tr><td>8</td><td>其他相關法規</td><td>開放項目，範圍不能窮盡</td></tr></tbody></table></div></section><section class="plan-section"><h2>候選內容與目前缺口</h2><p class="muted">已從官方搜尋內容映射營建法規與實務八項；原始附件與其餘科目仍待逐項核對。</p><div class="table-scroll"><table><caption class="small">候選主題盤點，非完整考綱或考題頻率統計</caption><thead><tr><th scope="col">候選主題</th><th scope="col">本次原型</th><th scope="col">下一個驗收門檻</th></tr></thead><tbody id="scope-rows"></tbody></table></div></section>
+<section class="plan-section"><h2>可交付給下一階段開發的規格</h2><p>正式應用建議採 Next.js、TypeScript、PostgreSQL 與 SVG。原型為單一 HTML，便於先驗證學習流程。</p><div class="docs"><a href="specification.md">完整規格與工作清單</a><a href="model.sql">資料模型草稿</a><a href="scope.json">覆蓋表與查證紀錄</a></div><p class="notice">歷史版本、正式題庫、帳號同步、AI、離線安裝與雲端部署均尚未實作。</p></section>
+<section class="source"><h2>來源與待查證</h2><p><a href="https://wwwc.moex.gov.tw/main/content/wHandMenuFile.ashx?file_id=1253" target="_blank" rel="noopener">考選部建築師命題大綱</a>：已讀官方搜尋索引中的營建法規與實務八項；原檔讀取仍失敗，其餘科目待核對。</p><p><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&amp;flno=33" target="_blank" rel="noopener">第 33 條官方條文</a>：2026-10-20 核對表列四款尺寸與說明五；未核對歷史版本及補充圖例。</p></section>
+</div>
+<footer>築法學習室・互動原型 v0.2／2026-10-20。自編示意與練習；收藏僅保存在此瀏覽器。<br>本次驗證對象為介面與操作，學習成效及完整法規適用性尚待驗證。</footer>
+<noscript><p class="notice">請啟用 JavaScript 操作圖解。法源與規劃文字仍可閱讀；初始圖面為示意。</p></noscript>
+</main></div>
+<script>
+'use strict';
+__GEOMETRY_JS__
+const topics=__TOPICS_JSON__;
+const $=id=>document.getElementById(id);
+let selected='stairs', saved=new Set(), persistent=true;
+try{const raw=JSON.parse(localStorage.getItem('architect-law-lab-bookmarks')||'[]');if(Array.isArray(raw))saved=new Set(raw.filter(x=>topics.some(t=>t.id===x)))}catch(e){persistent=false}
+function storageMessage(){ $('storage-note').textContent=persistent?'收藏儲存在此瀏覽器，尚未提供跨裝置同步。':'瀏覽器儲存不可用；收藏僅保留在本次頁面，關閉後不會保存。' }
+function renderTopics(){
+const q=$('search').value.trim().toLowerCase();const list=topics.filter(t=>(t.title+t.hint).toLowerCase().includes(q));$('topics').replaceChildren();
+for(const t of list){const b=document.createElement('button');b.type='button';b.className='topic';b.dataset.topic=t.id;b.setAttribute('aria-current',String(t.id===selected));const s=document.createElement('span');s.textContent=t.title;const h=document.createElement('small');h.textContent=t.id==='stairs'?'可操作圖解':'候選主題・尚待建置';b.append(s,h);b.addEventListener('click',()=>selectTopic(t.id));$('topics').append(b)}$('no-topics').hidden=list.length!==0;
+}
+function updateBookmark(){const b=$('bookmark');b.textContent=saved.has(selected)?'已收藏・點此取消':'收藏主題';b.setAttribute('aria-pressed',String(saved.has(selected)))}
+function showView(view){$('learn-view').hidden=view!=='learn';$('plan-view').hidden=view!=='plan';document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===view)))}
+function selectTopic(id){selected=id;showView('learn');const t=topics.find(x=>x.id===id);const active=id==='stairs';$('stair-unit').hidden=!active;$('empty-unit').hidden=active;$('topic-title').textContent=active?'扶手占了位置，還剩多少淨寬？':t.title;$('topic-desc').textContent=active?'拖動尺寸，看扶手與剩餘通行空間的關係。':'先確認範圍與來源，再製作圖解與題目。';$('empty-title').textContent=t.title;$('gaps').replaceChildren();for(const g of t.gaps){const li=document.createElement('li');li.textContent=g;$('gaps').append(li)}if(active){$('width-pane').hidden=false;$('profile-pane').hidden=true;document.querySelectorAll('[data-diagram]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.diagram==='width')));updateQuestion()}renderTopics();updateBookmark();if(matchMedia('(max-width:760px)').matches){$('sidebar').classList.add('is-collapsed');$('menu').setAttribute('aria-expanded','false');$('menu').textContent='展開主題';$('topic-title').tabIndex=-1;$('topic-title').focus()}}
+function attrs(id,values){for(const [key,value]of Object.entries(values))$(id).setAttribute(key,value)}
+function update(){
+const w=Number($('width').value), l=Number($('left').value),r=Number($('right').value),c=calculateClearWidth(w,l,r);
+for(const [id,v]of [['width',w],['left',l],['right',r]])$(id+'-out').textContent=v+' cm';
+const scale=2.5,px=w*scale,x=(640-px)/2,lx=x+l*scale,rx=x+px-r*scale;
+attrs('stair-outline',{x,width:px});attrs('left-zone',{x,width:l*scale});attrs('right-zone',{x:x+px-r*scale,width:r*scale});attrs('clear-zone',{x:lx,width:c*scale});
+attrs('outer-dim',{d:'M'+x+' 64v-12m0 6h'+px+'m0-6v12'});attrs('inner-dim',{d:'M'+lx+' 330v18m0-9h'+c*scale+'m0-9v18'});
+$('outer-label').textContent='W = '+w+' cm';$('clear-label').textContent='C = '+c+' cm';$('left-label').textContent='L = '+l+' cm';$('right-label').textContent='R = '+r+' cm';attrs('left-label',{x:20,y:318,'text-anchor':'start'});attrs('right-label',{x:620,y:318,'text-anchor':'end'});
+$('treads').replaceChildren();for(let i=1;i<7;i++){const line=document.createElementNS('http://www.w3.org/2000/svg','line');for(const [k,v]of Object.entries({x1:x,x2:x+px,y1:92+i*30,y2:92+i*30}))line.setAttribute(k,v);$('treads').append(line)}
+$('equation').textContent=c+' cm = '+w+' − '+l+' − '+r;
+$('checks').replaceChildren();for(const [ok,good,bad]of [[l<=10&&r<=10,'兩側扶手突出量均在 10 cm 範圍內','至少一側扶手突出超出 10 cm 範圍'],[c>=75,'剩餘淨寬達 75 cm 門檻','剩餘淨寬未達 75 cm 門檻']]){const li=document.createElement('li');li.className=ok?'status-good':'status-bad';li.textContent=(ok?'✓ ':'▲ ')+(ok?good:bad);$('checks').append(li)}
+updateQuestion();
+$('svg-desc').textContent='示意寬度'+w+'公分，左側突出'+l+'公分，右側突出'+r+'公分，剩餘淨寬'+c+'公分。只檢查第33條說明五的兩項門檻。';
+$('feedback').textContent='';$('answer').value='';updateProfile();
+}
+$('search').addEventListener('input',renderTopics);document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+$('menu').addEventListener('click',()=>{const collapsed=$('sidebar').classList.toggle('is-collapsed');$('menu').setAttribute('aria-expanded',String(!collapsed));$('menu').textContent=collapsed?'展開主題':'收折主題'});
+$('bookmark').addEventListener('click',()=>{if(saved.has(selected))saved.delete(selected);else saved.add(selected);try{localStorage.setItem('architect-law-lab-bookmarks',JSON.stringify([...saved]));persistent=true}catch(e){persistent=false}updateBookmark();storageMessage()});
+for(const id of ['width','left','right'])$(id).addEventListener('input',update);
+document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{const vals=b.dataset.preset.split(',');['width','left','right'].forEach((id,i)=>$(id).value=vals[i]);update()}));
+$('version').addEventListener('change',()=>{$('version-note').hidden=$('version').value!=='history'});
+$('return-stairs').addEventListener('click',()=>selectTopic('stairs'));
+$('quiz-form').addEventListener('submit',e=>{e.preventDefault();if(!$('answer').value.trim())return;const profile=!$('profile-pane').hidden;const c=profile?Number($('riser').value)*3:calculateClearWidth(Number($('width').value),Number($('left').value),Number($('right').value));const good=Number($('answer').value)===c;$('feedback').className=good?'status-good':'status-bad';$('feedback').textContent=good?'✓ 算術正確。接著檢查適用條件；這不是整體合規結論。':(profile?'▲ 再試一次：三級的垂直差為單級級高乘以 3。':'▲ 再試一次：用 W 扣除左右兩側突出量。')});
+for(const t of topics){const tr=document.createElement('tr');for(const value of [t.title,t.id==='stairs'?'扶手淨寬示意':'尚未建置',t.gaps.join('；')]){const td=document.createElement('td');td.textContent=value;tr.append(td)}$('scope-rows').append(tr)}
+
+const categoryRules=__STAIR_CATEGORIES_JSON__;
+function updateQuestion(){const profile=!$('profile-pane').hidden;$('question').textContent=profile?'自編幾何練習：單級級高 H = '+$('riser').value+' cm，連續三級的總垂直差是多少？':'W = '+$('width').value+' cm，L = '+$('left').value+' cm，R = '+$('right').value+' cm。扣除扶手後的淨寬是多少？';$('feedback').textContent='';$('answer').value=''}
+function updateProfile(){
+const h=Number($('riser').value),d=Number($('tread').value),s=3.5,x=120,y=312;let path='M'+x+' '+y;for(let i=1;i<=3;i++)path+='V'+(y-h*s*i)+'H'+(x+d*s*i);attrs('profile-path',{d:path});attrs('riser-dim',{d:'M'+(x-16)+' '+y+'h-12m6 0v'+(-h*s)+'m-6 0h12'});attrs('tread-dim',{d:'M'+x+' '+(y-h*s-22)+'v-12m0 6h'+d*s+'m0-6v12'});$('riser-label').textContent='H = '+h+' cm';attrs('riser-label',{x:24,y:y-h*s/2});$('tread-label').textContent='D = '+d+' cm';attrs('tread-label',{x:x+d*s/2,y:y-h*s-48});$('riser-out').textContent=h+' cm';$('tread-out').textContent=d+' cm';$('profile-desc').textContent='自編剖面示意，級高'+h+'公分，級深'+d+'公分。';updateQuestion();
+const c=categoryRules.find(c=>c.id===$('category').value);$('profile-result').replaceChildren();if(!c){$('category-result').textContent='尚未確認用途款別；扶手淨寬另按說明五顯示，表列尺寸暫不判斷。';$('profile-result').textContent='請先核對並選擇表列款別，再比較級高與級深。';return}
+const width=Number($('width').value);$('category-result').textContent=c.title+'：樓梯及平臺寬度至少 '+c.width_min+' cm，級高至多 '+c.riser_max+' cm，級深至少 '+c.tread_min+' cm。第33條表列尺寸，查證2026-10-20。';
+for(const [ok,text]of [[width>=c.width_min,'輸入寬度 '+width+' cm／表列下限 '+c.width_min+' cm'],[h<=c.riser_max,'級高 '+h+' cm／表列上限 '+c.riser_max+' cm'],[d>=c.tread_min,'級深 '+d+' cm／表列下限 '+c.tread_min+' cm']]){const p=document.createElement('p');p.className=ok?'status-good':'status-bad';p.textContent=(ok?'✓ ':'▲ ')+text;$('profile-result').append(p)}const note=document.createElement('p');note.className='small muted';note.textContent='僅比較選定款別的表列尺寸。條文例外、完整量測與其他法規仍須檢討。';$('profile-result').append(note)
+}
+$('category').addEventListener('change',updateProfile);['riser','tread'].forEach(id=>$(id).addEventListener('input',updateProfile));document.querySelectorAll('[data-diagram]').forEach(b=>b.addEventListener('click',()=>{const profile=b.dataset.diagram==='profile';$('profile-pane').hidden=!profile;$('width-pane').hidden=profile;document.querySelectorAll('[data-diagram]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('topic-title').textContent=profile?'級高與級深，分別量哪個方向？':'扶手占了位置，還剩多少淨寬？';$('topic-desc').textContent=profile?'調整樓梯剖面，比較選定款別的表列尺寸。':'拖動尺寸，看扶手與剩餘通行空間的關係。';updateProfile()}));
+
+storageMessage();renderTopics();updateBookmark();update();
+</script>
+</body></html>

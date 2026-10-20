@@ -1,0 +1,210 @@
+{
+  "type": "provisional_exam_scope",
+  "updated_at": "2026-10-20",
+  "exam": "臺灣專技高考建築師",
+  "target_exam_year": null,
+  "full_outline_verified": false,
+  "outline_source": "https://wwwc.moex.gov.tw/main/content/wHandMenuFile.ashx?file_id=1253",
+  "outline_access_result": "原始附件下載仍失敗；2026-10-20已讀取官方搜尋索引中營建法規與實務八項，其餘科目未逐項核對",
+  "priority_basis": "教學圖解適配程度與既有KB素材；非考題頻率",
+  "topics": [
+    {
+      "id": "stairs",
+      "title": "樓梯與避難基礎",
+      "priority": "P1",
+      "outline_mapping": "reg-1",
+      "kb_coverage": "partial",
+      "prototype": "扶手突出與淨寬",
+      "gaps": [
+        "用途分類及例外待逐條整理",
+        "官方補充圖例待核對",
+        "無障礙與避難跨法規待核對"
+      ],
+      "search_terms": "扶手、淨寬、平臺、級高、級深"
+    },
+    {
+      "id": "light",
+      "title": "採光與通風",
+      "priority": "P2",
+      "outline_mapping": "reg-1",
+      "kb_coverage": "partial",
+      "prototype": null,
+      "gaps": [
+        "逐條核對現行法",
+        "圖解量測基準",
+        "考題版本對照"
+      ],
+      "search_terms": "居室、開口、通風"
+    },
+    {
+      "id": "far",
+      "title": "建蔽與容積",
+      "priority": "P2",
+      "outline_mapping": "reg-1",
+      "kb_coverage": "partial",
+      "prototype": null,
+      "gaps": [
+        "中央與地方適用界線",
+        "現行數值及回計規則核對"
+      ],
+      "search_terms": "陽臺、梯廳、面積"
+    },
+    {
+      "id": "access",
+      "title": "無障礙設計",
+      "priority": "P2",
+      "outline_mapping": "reg-7",
+      "kb_coverage": "partial",
+      "prototype": null,
+      "gaps": [
+        "完整無障礙設施設計規範",
+        "門淨寬以外之路徑與樓梯"
+      ],
+      "search_terms": "出入口、通路、坡道"
+    },
+    {
+      "id": "practice",
+      "title": "建築管理與執業責任",
+      "priority": "P2",
+      "outline_mapping": "reg-1",
+      "kb_coverage": "not_audited",
+      "prototype": null,
+      "gaps": [
+        "建築法與建築師法條文盤點",
+        "執照KB未查證數值重新核對"
+      ],
+      "search_terms": "建築法、建築師法、執照"
+    },
+    {
+      "id": "land",
+      "title": "土地使用與都市計畫",
+      "priority": "P3",
+      "outline_mapping": "reg-2,reg-3",
+      "kb_coverage": "not_audited",
+      "prototype": null,
+      "gaps": [
+        "依正式考綱確認收錄範圍",
+        "時效及施行狀態"
+      ],
+      "search_terms": "基地、分區、土地"
+    },
+    {
+      "id": "renewal",
+      "title": "更新重建與延伸法規",
+      "priority": "P3",
+      "outline_mapping": "reg-2；危老等延伸項目仍待確認",
+      "kb_coverage": "not_audited",
+      "prototype": null,
+      "gaps": [
+        "依正式考綱確認收錄範圍",
+        "子法及例外"
+      ],
+      "search_terms": "都更、危老、子法"
+    },
+    {
+      "id": "condo",
+      "title": "公寓大廈管理",
+      "priority": "P2",
+      "outline_mapping": "reg-4",
+      "kb_coverage": "not_audited",
+      "prototype": null,
+      "gaps": [
+        "條例與子法盤點",
+        "權利義務及程序圖解"
+      ],
+      "search_terms": "管委會、規約、共用"
+    },
+    {
+      "id": "industry",
+      "title": "營造業與工程責任",
+      "priority": "P2",
+      "outline_mapping": "reg-5",
+      "kb_coverage": "not_audited",
+      "prototype": null,
+      "gaps": [
+        "營造業法與子法盤點",
+        "工程角色責任比較"
+      ],
+      "search_terms": "承攬、營造業、責任"
+    },
+    {
+      "id": "procurement",
+      "title": "政府採購與契約",
+      "priority": "P2",
+      "outline_mapping": "reg-6",
+      "kb_coverage": "not_audited",
+      "prototype": null,
+      "gaps": [
+        "採購法及子法盤點",
+        "契約規範與程序時效核對"
+      ],
+      "search_terms": "招標、決標、契約"
+    }
+  ],
+  "outline_section_checked": "營建法規與實務：官方搜尋索引逐項對照；原檔待讀",
+  "outline_items": [
+    {
+      "id": "reg-1",
+      "summary": "建築法制、執業法制與技術規則",
+      "topics": [
+        "stairs",
+        "light",
+        "far",
+        "practice"
+      ]
+    },
+    {
+      "id": "reg-2",
+      "summary": "都市計畫與都市更新法制",
+      "topics": [
+        "land",
+        "renewal"
+      ]
+    },
+    {
+      "id": "reg-3",
+      "summary": "國土及區域計畫的非都市土地使用管制",
+      "topics": [
+        "land"
+      ]
+    },
+    {
+      "id": "reg-4",
+      "summary": "公寓大廈管理及子法",
+      "topics": [
+        "condo"
+      ]
+    },
+    {
+      "id": "reg-5",
+      "summary": "營造業及子法",
+      "topics": [
+        "industry"
+      ]
+    },
+    {
+      "id": "reg-6",
+      "summary": "政府採購、子法、契約與規範",
+      "topics": [
+        "procurement"
+      ]
+    },
+    {
+      "id": "reg-7",
+      "summary": "無障礙設施法規",
+      "topics": [
+        "access"
+      ]
+    },
+    {
+      "id": "reg-8",
+      "summary": "其他相關法規",
+      "topics": [],
+      "note": "開放項目，不能宣稱窮盡範圍"
+    }
+  ],
+  "source_check_ids": [
+    "btr33-note5-20261020",
+    "btr33-table-20261020"
+  ]
+}

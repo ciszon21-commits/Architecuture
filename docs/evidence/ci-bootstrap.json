@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-20",
+  "kind": "github_actions_verification",
+  "repository": "ciszon21-commits/Architecuture",
+  "commit": "f792a9464eb77f79194cdab2f36090606dc17a29",
+  "run_id": 39354169157,
+  "url": "https://github.com/ciszon21-commits/Architecuture/actions/runs/39354169157",
+  "observed_via": "GitHub connector workflow jobs",
+  "jobs": [
+    {
+      "name": "verify (ubuntu-latest)",
+      "conclusion": "success"
+    },
+    {
+      "name": "verify (windows-latest)",
+      "conclusion": "success"
+    }
+  ],
+  "scope": "安裝、知識與路徑檢查、6項Node測試、建置及建置後無已追蹤檔案差異",
+  "limits": [
+    "不是UI瀏覽器測試",
+    "不是法規專業審核",
+    "僅確認記錄的提交版本"
+  ]
+}
