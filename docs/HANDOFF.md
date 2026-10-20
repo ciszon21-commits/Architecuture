@@ -34,3 +34,7 @@
 ## 本次驗證回執
 
 [evidence/project-bootstrap.json](evidence/project-bootstrap.json)記錄本機及乾淨匯出檢查。程式與知識結構驗證通過；UI、專業法規與遠端CI各自保留狀態。
+
+## 遠端交接入口
+
+[PR #1](https://github.com/ciszon21-commits/Architecuture/pull/1)為初始專案草稿PR，尚未合併。Windows與Linux的初始提交檢查成功；精確提交及範圍見[evidence/ci-bootstrap.json](evidence/ci-bootstrap.json)。接手時使用本文件的功能分支，不假設main已有專案程式。

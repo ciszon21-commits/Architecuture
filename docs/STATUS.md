@@ -8,7 +8,7 @@
 - 可操作原型：扶手淨寬、級高級深、款別比較、自編題、搜尋與收藏。
 - 考綱八項映射與候選主題缺口。
 - 相對路徑、固定Node版本、鎖檔、建置腳本、知識檢查及測試。
-- Windows／Linux的CI工作流程定義，遠端結果尚待實際執行確認。
+- Windows／Linux的CI工作流程已實際執行通過；測試提交與回執見下方。
 
 ## 尚未完成
 
@@ -25,3 +25,7 @@ docs/evidence/prototype-v0.2.json保存遷移前原型70項操作檢查紀錄；
 ## 本次本機驗證
 
 Node.js 22.20.0下，離線npm ci、知識驗證、6項Node測試及建置通過；以Git暫存內容匯出至另一位置後再次通過相同檢查。忽略規則及git diff --cached --check通過。這是乾淨來源的可重建測試，尚未在真實第二台電腦執行。瀏覽器對新檔案的file協定存取受到政策阻擋，未宣稱重新通過UI驗證；見[evidence/project-bootstrap.json](evidence/project-bootstrap.json)。
+
+## 遠端驗證
+
+提交f792a9464eb77f79194cdab2f36090606dc17a29的[GitHub Actions](https://github.com/ciszon21-commits/Architecuture/actions/runs/39354169157)已完成，Windows與Linux兩個工作皆成功。詳見[evidence/ci-bootstrap.json](evidence/ci-bootstrap.json)。此結果不等同UI、學習成效或法規專業審核。
