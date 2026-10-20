@@ -1,0 +1,44 @@
+{
+  "article": "建築技術規則建築設計施工編第33條表列四款",
+  "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=33",
+  "checked_on": "2026-10-20",
+  "source_status": "source_checked",
+  "professional_review": "pending",
+  "units": "cm",
+  "categories": [
+    {
+      "id": "1",
+      "title": "第1款：小學校舍等供兒童使用的樓梯",
+      "width_min": 140,
+      "riser_max": 16,
+      "tread_min": 26
+    },
+    {
+      "id": "2",
+      "title": "第2款：學校、醫院等條文明列用途",
+      "width_min": 140,
+      "riser_max": 18,
+      "tread_min": 26
+    },
+    {
+      "id": "3",
+      "title": "第3款：符合條文面積條件者",
+      "width_min": 120,
+      "riser_max": 20,
+      "tread_min": 24
+    },
+    {
+      "id": "4",
+      "title": "第4款：第1、2、3款以外者",
+      "width_min": 75,
+      "riser_max": 20,
+      "tread_min": 21
+    }
+  ],
+  "notes": [
+    "第2款須逐項核對列舉用途；商場含加工服務部等的營業面積條件為1500平方公尺以上。",
+    "第3款涉及地面層以上每層的居室樓地板面積超過200平方公尺，或地下面積超過200平方公尺。",
+    "用途款別由使用者核對後選擇；有特別規定或例外時不得直接套用表列值。"
+  ],
+  "source_check_id": "btr33-table-20261020"
+}

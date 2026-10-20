@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-20",
+  "kind": "project_bootstrap_verification",
+  "runtime": "Windows，Node.js 22.20.0，無第三方執行依賴",
+  "checks": [
+    {
+      "name": "npm ci --ignore-scripts --offline",
+      "result": "passed"
+    },
+    {
+      "name": "npm run validate",
+      "result": "passed"
+    },
+    {
+      "name": "npm test",
+      "result": "passed",
+      "tests": 6
+    },
+    {
+      "name": "npm run build",
+      "result": "passed",
+      "outputs": 6
+    },
+    {
+      "name": "git diff --cached --check",
+      "result": "passed"
+    },
+    {
+      "name": "以Git暫存內容匯出到新位置後，離線安裝與npm run check",
+      "result": "passed",
+      "tests": 6
+    },
+    {
+      "name": "dist、node_modules、.env、local-data、.local忽略規則",
+      "result": "passed"
+    }
+  ],
+  "limits": [
+    "新專案的瀏覽器檢視遭file協定政策阻擋；未以其他瀏覽器或HTTP繞過",
+    "舊原型70項操作紀錄另存prototype-v0.2.json，並非本次重跑數量",
+    "GitHub Actions的Linux及Windows結果須待推送後確認",
+    "尚無真實第二台電腦或iOS Safari驗證",
+    "法規專業審核與原始考綱附件仍待完成"
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "date": "2026-10-20",
+  "artifact": "互動原型v0.2",
+  "runtime": "本機Chrome，Playwright無頭操作",
+  "checks": [
+    {
+      "name": "初始算術為80公分",
+      "passed": true
+    },
+    {
+      "name": "淨寬邊界算術",
+      "passed": true
+    },
+    {
+      "name": "淨寬邊界門檻提示",
+      "passed": true
+    },
+    {
+      "name": "淨寬不足算術",
+      "passed": true
+    },
+    {
+      "name": "淨寬不足門檻提示",
+      "passed": true
+    },
+    {
+      "name": "突出超出範圍算術",
+      "passed": true
+    },
+    {
+      "name": "突出超出範圍門檻提示",
+      "passed": true
+    },
+    {
+      "name": "正確答案回饋",
+      "passed": true
+    },
+    {
+      "name": "錯誤答案回饋",
+      "passed": true
+    },
+    {
+      "name": "滑桿鍵盤操作",
+      "passed": true
+    },
+    {
+      "name": "尺寸更新清除舊題回饋",
+      "passed": true
+    },
+    {
+      "name": "主題搜尋",
+      "passed": true
+    },
+    {
+      "name": "未建置內容誠實呈現",
+      "passed": true
+    },
+    {
+      "name": "空搜尋結果",
+      "passed": true
+    },
+    {
+      "name": "收藏重新開啟保留",
+      "passed": true
+    },
+    {
+      "name": "未建置歷史版本提示",
+      "passed": true
+    },
+    {
+      "name": "開發藍圖與覆蓋表",
+      "passed": true
+    },
+    {
+      "name": "手機主題初始收折",
+      "passed": true
+    },
+    {
+      "name": "手機主題可展開",
+      "passed": true
+    },
+    {
+      "name": "手機選題後收折",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 360 learn",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 360 plan",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 390 learn",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 390 plan",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 768 learn",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 768 plan",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 1280 learn",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 1280 plan",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 1440 learn",
+      "passed": true
+    },
+    {
+      "name": "無頁面橫向溢出 1440 plan",
+      "passed": true
+    },
+    {
+      "name": "深色模式使用深色背景",
+      "passed": true
+    },
+    {
+      "name": "儲存阻擋回退提示",
+      "passed": true
+    },
+    {
+      "name": "儲存阻擋仍可收藏",
+      "passed": true
+    },
+    {
+      "name": "無執行期錯誤",
+      "passed": true
+    },
+    {
+      "name": "原型不發送外部請求",
+      "passed": true
+    },
+    {
+      "name": "覆蓋表JSON可讀且未宣稱完整核對",
+      "passed": true
+    },
+    {
+      "name": "款別未確認不套用尺寸",
+      "passed": true
+    },
+    {
+      "name": "第1款尺寸邊界",
+      "passed": true
+    },
+    {
+      "name": "第1款級高超標提示",
+      "passed": true
+    },
+    {
+      "name": "第1款級深不足提示",
+      "passed": true
+    },
+    {
+      "name": "第2款尺寸邊界",
+      "passed": true
+    },
+    {
+      "name": "第2款級高超標提示",
+      "passed": true
+    },
+    {
+      "name": "第2款級深不足提示",
+      "passed": true
+    },
+    {
+      "name": "第3款尺寸邊界",
+      "passed": true
+    },
+    {
+      "name": "第3款級高超標提示",
+      "passed": true
+    },
+    {
+      "name": "第3款級深不足提示",
+      "passed": true
+    },
+    {
+      "name": "第4款尺寸邊界",
+      "passed": true
+    },
+    {
+      "name": "第4款級高超標提示",
+      "passed": true
+    },
+    {
+      "name": "第4款級深不足提示",
+      "passed": true
+    },
+    {
+      "name": "表列寬度不足提示",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 360 learn",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 360 plan",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 390 learn",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 390 plan",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 768 learn",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 768 plan",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 1280 learn",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 1280 plan",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 1440 learn",
+      "passed": true
+    },
+    {
+      "name": "v0.2無頁面橫向溢出 1440 plan",
+      "passed": true
+    },
+    {
+      "name": "考綱八項映射呈現",
+      "passed": true
+    },
+    {
+      "name": "覆蓋表十個主題",
+      "passed": true
+    },
+    {
+      "name": "新圖解深色模式無溢出",
+      "passed": true
+    },
+    {
+      "name": "規則檔與內嵌資料一致",
+      "passed": true
+    },
+    {
+      "name": "v0.2無執行期錯誤",
+      "passed": true
+    },
+    {
+      "name": "剖面切換更新主標題",
+      "passed": true
+    },
+    {
+      "name": "剖面練習依級高計算",
+      "passed": true
+    },
+    {
+      "name": "平面切換恢復淨寬題目",
+      "passed": true
+    },
+    {
+      "name": "v0.2平面練習答案",
+      "passed": true
+    },
+    {
+      "name": "返回主題時圖解及標題一致",
+      "passed": true
+    }
+  ],
+  "passed": 70,
+  "failed": 0,
+  "page_errors": [],
+  "external_requests": [],
+  "screenshots": [
+    "desktop.png",
+    "profile-mobile.png",
+    "plan-desktop.png"
+  ],
+  "limitations": [
+    "未驗證iOS Safari或真實手機",
+    "未驗證學習成效及完整法規合規",
+    "用途款別需自行核對，未自動認定",
+    "model.sql僅結構草稿，未執行PostgreSQL遷移",
+    "原始考綱附件讀取失敗；僅營建法規與實務八項由官方搜尋內容映射",
+    "歷史版本、補充圖例及專業教材審核尚待完成"
+  ],
+  "delivery": "直接開啟index.html；本機HTTP預覽因瀏覽器ERR_NETWORK_ACCESS_DENIED失敗，測試伺服器已關閉",
+  "receipt_kind": "historical_prototype_receipt",
+  "note": "遷移前原型驗證紀錄；非新專案CI測試結果，截圖移至docs/evidence/。",
+  "original_html_sha256": "7a4fcdf866041ea5d136429350b43c387375fb5e7b9d17379b7ba66b9aaa87aa"
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-20",
+  "sources": [
+    {
+      "id": "btr33-note5-20261020",
+      "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=33",
+      "article": "建築技術規則建築設計施工編第33條說明五",
+      "accessed_on": "2026-10-20",
+      "source_compilation_cutoff": "2026-10-08",
+      "method": "工具直接讀取官方條文並逐項核對",
+      "actor": "agent:codex",
+      "scope": "扶手兩側各10公分範圍、最小淨寬75公分",
+      "status": "source_checked",
+      "professional_review": "pending",
+      "historical_versions_checked": false,
+      "official_diagram_checked": false
+    },
+    {
+      "id": "btr33-table-20261020",
+      "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=D0070115&flno=33",
+      "article": "建築技術規則建築設計施工編第33條表列四款",
+      "accessed_on": "2026-10-20",
+      "source_compilation_cutoff": "2026-10-08",
+      "method": "工具直接讀取官方條文表格，核對四款寬度、級高與級深及條件",
+      "actor": "agent:codex",
+      "scope": "表列尺寸；不自動認定用途款別，不含說明各例外及無障礙專用規定",
+      "status": "source_checked",
+      "professional_review": "pending",
+      "official_diagram_checked": false
+    }
+  ],
+  "outline": {
+    "id": "moex-outline-20250402",
+    "url": "https://wwwc.moex.gov.tw/main/content/wHandMenuFile.ashx?file_id=1253",
+    "accessed_on": "2026-10-20",
+    "status": "indexed_excerpt_checked",
+    "scope": "營建法規與實務八項",
+    "original_file_status": "unavailable",
+    "professional_review": "pending"
+  }
+}
